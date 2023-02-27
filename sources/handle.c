@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   handle.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 17:51:58 by microdri          #+#    #+#             */
-/*   Updated: 2023/02/27 19:19:22 by microdri         ###   ########.fr       */
+/*   Created: 2023/02/27 14:52:00 by microdri          #+#    #+#             */
+/*   Updated: 2023/02/27 19:17:17 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-int	main(void)
+void	handle(int signum)
 {
-	char	*input;
-
-	set_sig();
-	while (42)
+	(void)signum;
+	if (RL_ISSTATE(RL_STATE_READCMD))
 	{
-		input = readline("microtano$: ");
-		if(ft_strcmp(input, "exit") == 0 || input == NULL)
-			break ;
-//		ft_printf("%s\n", input);
-		add_history(input);
-		free(input);
+		// setar global para 1
+		write(1, "\n", 1);
 	}
-	return (0);
+	else
+		ioctl(1, TIOCSTI, "\n");
+	rl_on_new_line();
+	rl_replace_line("", 0);
+	rl_redisplay();
+}
+
+void	set_sig()
+{
+	signal(SIGINT, handle);
+	signal(SIGQUIT, SIG_IGN);
 }
