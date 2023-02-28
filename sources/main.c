@@ -6,11 +6,12 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:51:58 by microdri          #+#    #+#             */
-/*   Updated: 2023/02/27 19:19:22 by microdri         ###   ########.fr       */
+/*   Updated: 2023/02/28 16:48:35 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+int g_var;
 
 int	main(void)
 {
@@ -21,8 +22,11 @@ int	main(void)
 	{
 		input = readline("microtano$: ");
 		if(ft_strcmp(input, "exit") == 0 || input == NULL)
+		{
+			write(1, "exit\n", 5);
+			rl_clear_history();
 			break ;
-//		ft_printf("%s\n", input);
+		}
 		add_history(input);
 		free(input);
 	}

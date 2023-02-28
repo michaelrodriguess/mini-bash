@@ -6,11 +6,12 @@
 /*   By: microdri <microdri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 14:52:00 by microdri          #+#    #+#             */
-/*   Updated: 2023/02/27 19:17:17 by microdri         ###   ########.fr       */
+/*   Updated: 2023/02/28 16:46:53 by microdri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "../../includes/minishell.h"
+int g_var; //assim se declara variaveis globais no escopo do projeto! 
 
 void	handle(int signum)
 {

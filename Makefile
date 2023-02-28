@@ -1,5 +1,5 @@
 SRCS			=	./sources/main.c \
-					./sources/handle.c \
+					./sources/handling/handle.c \
 
 NAME			= minishell
 OBJS			= $(SRCS:.c=.o)
