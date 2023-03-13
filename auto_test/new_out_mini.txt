@@ -1,0 +1,13 @@
+test builtis
+      cd      
+/Users/microdri/Documents/mini-bash/auto_test
+/Users/microdri/Documents/mini-bash
+/Users/microdri
+      echo    
+ls
+ls '  a  ' 
+ola ria on Rio
+      pwd     
+/Users/microdri
+    export   
+    unset    

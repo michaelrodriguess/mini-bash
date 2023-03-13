@@ -1,3 +1,49 @@
-echo Test
-env
-exit
+echo test builtis
+echo "      cd      "
+# cd oi/ implement error 	no such file or diretory
+pwd
+cd ../
+pwd
+cd
+pwd
+echo "      echo    "
+echo ls
+echo "ls ' " a " ' "
+echo ola ria "on" Rio
+#echo -n on world este caso da diferenca, mas esta correto pos o nome do programa e diferente!
+#echo -n-n-n-n-n
+#echo -n -n -n -n 
+#echo -nnnnn
+#echo --nnnnn
+#echo
+# nenhum desses casos do echo acima esta funcionando!
+echo "      pwd     "
+pwd aoaoao
+echo "    export   "
+export lala
+export lala=
+export lala=aoba
+export lala=aaaae lolo
+export lala=aaae lolo=
+export lala=aaae lolo=oi
+export la lo
+export lala= lolo lolo=
+export la lolo=
+#export !lala indentificador nao e valido segue o error como exemplo - >bash: line 32: export: `!lala': not a valid identifier
+#export !lala= mesma coisa acima, so pode criar uma variavel comecando um caracter do alfabeto e _ 
+#export 9al= nao pode comecar com numero tambem!
+export _=
+export __lolo_lala=
+echo "    unset    "
+unset 
+#unset __lolo_lala= falta mensagem de error bash: line 39: unset: `__lolo_lala=': not a valid identifier verificar comportamento tambem
+unset __lolo_lala
+unset _
+unset lal
+unset lala
+#unset lolo== bash: line 44: unset: `lolo==': not a valid identifier
+#env nos temos que atualizar algumas informacoes!
+
+
+exit 42
+echo $?
